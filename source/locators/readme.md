@@ -1,0 +1,1 @@
+[Шпаргалка по формированию XPATH](https://devhints.io/xpath)
