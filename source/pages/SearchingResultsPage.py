@@ -21,3 +21,14 @@ class SearchingResultsPage(BasePage):
         items = BaseElements(self.driver, SRPLocators.SEARCHING_ITEM_LINK)
         items[number].click()
         time.sleep(5)  # Просто чтобы увидеть открытый сайт
+
+    @allure.step("Нажатие элемент на странице по локатору")
+    def click_found_element_by_locator(self, locator: tuple = (str(), str())):
+        item = BaseElement(self.driver, locator)
+        item.click()
+
+    @allure.step("Переход к переводчику")
+    def go_to_translator(self):
+        self.click_found_element_by_locator(SRPLocators.TRANSLATOR_ITEM_LINK)
+
+

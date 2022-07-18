@@ -19,9 +19,10 @@ class BaseElement:
         self._locator = locator
         self._e = e if e else self.__find()
 
-    def __find(self):
+    def __find(self, locator=None):
+        __locator = locator if locator else self._locator
         try:
-            element = self._wait.until(ec.presence_of_element_located(self._locator))
+            element = self._wait.until(ec.presence_of_element_located(__locator))
 
             if element:
                 return element
@@ -50,3 +51,6 @@ class BaseElement:
 
     def text(self) -> str:
         return re.sub(' +', ' ', self._e.text.strip())
+
+    def get_element_by_locator(self, locator: tuple):
+        self.__find(locator)
