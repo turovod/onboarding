@@ -2,7 +2,7 @@ from source.pages.MainPage import MainPage
 from source.pages.SearchingResultsPage import SearchingResultsPage
 
 
-def test_click_first_result(driver):
+def test_click_first_result(driver, login):
     main_page = MainPage(driver)
     main_page.fill_search_field()
 
@@ -10,7 +10,7 @@ def test_click_first_result(driver):
     results_page.click_first_found_element()
 
 
-def test_click_first_result_with_search_text(driver):
+def test_click_first_result_with_search_text(driver, login):
     main_page = MainPage(driver)
     main_page.fill_search_field_arbitrary_text(search_text='turovod.ru')
 
@@ -18,7 +18,7 @@ def test_click_first_result_with_search_text(driver):
     results_page.click_found_element_with_number(3)
 
 
-def test_click_result(driver):
+def test_click_result(driver, login):
     main_page = MainPage(driver)
     main_page.fill_search_field()
 
