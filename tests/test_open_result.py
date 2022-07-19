@@ -8,6 +8,7 @@ def test_click_first_result(driver, login):
 
     results_page = SearchingResultsPage(driver)
     results_page.click_first_found_element()
+    main_page.attach_screenshot('result_scr')
 
 
 def test_click_first_result_with_search_text(driver, login):
